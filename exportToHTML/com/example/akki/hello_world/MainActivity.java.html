@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(128,128,128); }
+.s3 { color: rgb(106,135,89); }
+.s4 { color: rgb(104,151,187); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com.example.akki.hello_world</span><span class="s0">;</span><span class="s1"> 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">android.Manifest</span><span class="s0">;</span><span class="s1"> 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span><span class="s1"> 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">android.content.pm.PackageManager</span><span class="s0">;</span><span class="s1"> 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">android.net.Uri</span><span class="s0">;</span><span class="s1"> 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">import </span><span class="s1">android.support.v4.app.ActivityCompat</span><span class="s0">;</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a></span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity</span><span class="s0">;</span><span class="s1"> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span><span class="s1"> 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span><span class="s1"> 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span><span class="s1"> 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span><span class="s1"> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span><span class="s1"> 
+<a name="l15"><span class="ln">15   </span></a> 
+<a name="l16"><span class="ln">16   </span></a> 
+<a name="l17"><span class="ln">17   </span></a></span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+<a name="l18"><span class="ln">18   </span></a> 
+<a name="l19"><span class="ln">19   </span></a> 
+<a name="l20"><span class="ln">20   </span></a>    Button addBtn</span><span class="s0">;</span><span class="s1"> 
+<a name="l21"><span class="ln">21   </span></a>    Button subBtn</span><span class="s0">;</span><span class="s1"> 
+<a name="l22"><span class="ln">22   </span></a>    EditText fn</span><span class="s0">;</span><span class="s1"> 
+<a name="l23"><span class="ln">23   </span></a>    EditText sn</span><span class="s0">;</span><span class="s1"> 
+<a name="l24"><span class="ln">24   </span></a>    TextView ans</span><span class="s0">;</span><span class="s1"> 
+<a name="l25"><span class="ln">25   </span></a>    Button intbtn</span><span class="s0">;</span><span class="s1"> 
+<a name="l26"><span class="ln">26   </span></a> 
+<a name="l27"><span class="ln">27   </span></a>    @Override 
+<a name="l28"><span class="ln">28   </span></a>    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+<a name="l29"><span class="ln">29   </span></a>        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span><span class="s1"> 
+<a name="l30"><span class="ln">30   </span></a>        setContentView(R.layout.activity_main)</span><span class="s0">;</span><span class="s1"> 
+<a name="l31"><span class="ln">31   </span></a>        fn = (EditText)findViewById(R.id.editText)</span><span class="s0">;</span><span class="s1"> 
+<a name="l32"><span class="ln">32   </span></a>        sn = (EditText)findViewById(R.id.editText2)</span><span class="s0">;</span><span class="s1"> 
+<a name="l33"><span class="ln">33   </span></a>        ans = (TextView)findViewById(R.id.textView3)</span><span class="s0">;</span><span class="s1"> 
+<a name="l34"><span class="ln">34   </span></a>        addBtn = (Button)findViewById(R.id.button2)</span><span class="s0">;</span><span class="s1"> 
+<a name="l35"><span class="ln">35   </span></a>        subBtn = (Button)findViewById(R.id.button)</span><span class="s0">;</span><span class="s1"> 
+<a name="l36"><span class="ln">36   </span></a>        intbtn = (Button)findViewById(R.id.button3)</span><span class="s0">;</span><span class="s1"> 
+<a name="l37"><span class="ln">37   </span></a> 
+<a name="l38"><span class="ln">38   </span></a>        addBtn.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() { 
+<a name="l39"><span class="ln">39   </span></a>            @Override 
+<a name="l40"><span class="ln">40   </span></a>            </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+<a name="l41"><span class="ln">41   </span></a>                Double num1 = Double.parseDouble(fn.getText().toString())</span><span class="s0">;</span><span class="s1"> 
+<a name="l42"><span class="ln">42   </span></a>                Double num2 = Double.parseDouble(sn.getText().toString())</span><span class="s0">;</span><span class="s1"> 
+<a name="l43"><span class="ln">43   </span></a>                Double sum = num1 + num2</span><span class="s0">;</span><span class="s1"> 
+<a name="l44"><span class="ln">44   </span></a>                ans.setText(sum.toString())</span><span class="s0">;</span><span class="s1"> 
+<a name="l45"><span class="ln">45   </span></a>            } 
+<a name="l46"><span class="ln">46   </span></a>        })</span><span class="s0">;</span><span class="s1"> 
+<a name="l47"><span class="ln">47   </span></a>        subBtn.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() { 
+<a name="l48"><span class="ln">48   </span></a>            @Override 
+<a name="l49"><span class="ln">49   </span></a>            </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+<a name="l50"><span class="ln">50   </span></a>                Double num1 = Double.parseDouble(fn.getText().toString())</span><span class="s0">;</span><span class="s1"> 
+<a name="l51"><span class="ln">51   </span></a>                Double num2 = Double.parseDouble(sn.getText().toString())</span><span class="s0">;</span><span class="s1"> 
+<a name="l52"><span class="ln">52   </span></a>                Double sub = num1 - num2</span><span class="s0">;</span><span class="s1"> 
+<a name="l53"><span class="ln">53   </span></a>                ans.setText(sub.toString())</span><span class="s0">;</span><span class="s1"> 
+<a name="l54"><span class="ln">54   </span></a>                Toast.makeText(MainActivity.</span><span class="s0">this,</span><span class="s1">sub.toString()</span><span class="s0">,</span><span class="s1">Toast.LENGTH_LONG).show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l55"><span class="ln">55   </span></a>            } 
+<a name="l56"><span class="ln">56   </span></a>        })</span><span class="s0">;</span><span class="s1"> 
+<a name="l57"><span class="ln">57   </span></a></span><span class="s2">//        intbtn.setOnClickListener(new View.OnClickListener() {</span><span class="s1"> 
+<a name="l58"><span class="ln">58   </span></a></span><span class="s2">//            @Override</span><span class="s1"> 
+<a name="l59"><span class="ln">59   </span></a></span><span class="s2">//            public void onClick(View view) {</span><span class="s1"> 
+<a name="l60"><span class="ln">60   </span></a></span><span class="s2">//                Intent inte = new Intent(MainActivity.this,Splash.class);</span><span class="s1"> 
+<a name="l61"><span class="ln">61   </span></a></span><span class="s2">//                startActivity(inte);</span><span class="s1"> 
+<a name="l62"><span class="ln">62   </span></a></span><span class="s2">//                finish();</span><span class="s1"> 
+<a name="l63"><span class="ln">63   </span></a> 
+<a name="l64"><span class="ln">64   </span></a></span><span class="s2">//                Intent sendIntent = new Intent();</span><span class="s1"> 
+<a name="l65"><span class="ln">65   </span></a></span><span class="s2">//                sendIntent.setAction(Intent.ACTION_SEND);</span><span class="s1"> 
+<a name="l66"><span class="ln">66   </span></a></span><span class="s2">//                sendIntent.putExtra(Intent.EXTRA_TEXT, &quot;This is a message&quot;);</span><span class="s1"> 
+<a name="l67"><span class="ln">67   </span></a></span><span class="s2">//                sendIntent.setType(&quot;text/plain&quot;);</span><span class="s1"> 
+<a name="l68"><span class="ln">68   </span></a> 
+<a name="l69"><span class="ln">69   </span></a>                </span><span class="s2">// Verify that the intent will resolve to an activity</span><span class="s1"> 
+<a name="l70"><span class="ln">70   </span></a></span><span class="s2">//                if (sendIntent.resolveActivity(getPackageManager()) != null) {</span><span class="s1"> 
+<a name="l71"><span class="ln">71   </span></a></span><span class="s2">//                    startActivity(sendIntent);</span><span class="s1"> 
+<a name="l72"><span class="ln">72   </span></a> 
+<a name="l73"><span class="ln">73   </span></a></span><span class="s2">//                }</span><span class="s1"> 
+<a name="l74"><span class="ln">74   </span></a>            } 
+<a name="l75"><span class="ln">75   </span></a> 
+<a name="l76"><span class="ln">76   </span></a>            </span><span class="s0">public  void </span><span class="s1">onClick(View view) { 
+<a name="l77"><span class="ln">77   </span></a>                Intent inte = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this, <a href="IntentActivity.java.html">IntentActivity</a></span><span class="s1">.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l78"><span class="ln">78   </span></a>                String text = subBtn.getText().toString()</span><span class="s0">;</span><span class="s1"> 
+<a name="l79"><span class="ln">79   </span></a>                inte.putExtra(</span><span class="s3">&quot;Value&quot;</span><span class="s0">,</span><span class="s1">text)</span><span class="s0">;</span><span class="s1"> 
+<a name="l80"><span class="ln">80   </span></a>                startActivity(inte)</span><span class="s0">;</span><span class="s1"> 
+<a name="l81"><span class="ln">81   </span></a>                finish()</span><span class="s0">;</span><span class="s1"> 
+<a name="l82"><span class="ln">82   </span></a>                Toast.makeText(</span><span class="s0">this,</span><span class="s3">&quot;Changing activity&quot;</span><span class="s0">,</span><span class="s1">Toast.LENGTH_LONG).show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l83"><span class="ln">83   </span></a>            } 
+<a name="l84"><span class="ln">84   </span></a> 
+<a name="l85"><span class="ln">85   </span></a>            </span><span class="s0">public void </span><span class="s1">callMardi(View view){ 
+<a name="l86"><span class="ln">86   </span></a>                Intent i = </span><span class="s0">new </span><span class="s1">Intent(Intent.ACTION_DIAL)</span><span class="s0">;</span><span class="s1"> 
+<a name="l87"><span class="ln">87   </span></a>                String num2 =sn.getText().toString()</span><span class="s0">;</span><span class="s1"> 
+<a name="l88"><span class="ln">88   </span></a>                i.setData(Uri.parse(</span><span class="s3">&quot;tel:&quot;</span><span class="s1">+num2))</span><span class="s0">;</span><span class="s1"> 
+<a name="l89"><span class="ln">89   </span></a>                </span><span class="s0">if</span><span class="s1">(ActivityCompat.checkSelfPermission(</span><span class="s0">this,</span><span class="s1">Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){ 
+<a name="l90"><span class="ln">90   </span></a>                    ActivityCompat.requestPermissions(</span><span class="s0">this,new </span><span class="s1">String[]{Manifest.permission.CALL_PHONE}</span><span class="s0">,</span><span class="s4">1</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l91"><span class="ln">91   </span></a>                    Toast.makeText(</span><span class="s0">this,</span><span class="s3">&quot;Teri maa ki bc, permission de na phone karne ki&quot;</span><span class="s0">,</span><span class="s1">Toast.LENGTH_LONG).show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l92"><span class="ln">92   </span></a>                } 
+<a name="l93"><span class="ln">93   </span></a>                </span><span class="s0">else</span><span class="s1">{ 
+<a name="l94"><span class="ln">94   </span></a>                    startActivity(i)</span><span class="s0">;</span><span class="s1"> 
+<a name="l95"><span class="ln">95   </span></a>                } 
+<a name="l96"><span class="ln">96   </span></a>                finish()</span><span class="s0">;</span><span class="s1"> 
+<a name="l97"><span class="ln">97   </span></a>            } 
+<a name="l98"><span class="ln">98   </span></a>    } 
+<a name="l99"><span class="ln">99   </span></a> 
+<a name="l100"><span class="ln">100  </span></a></span></pre>
+</body>
+</html>

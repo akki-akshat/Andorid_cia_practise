@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>IntentActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(106,135,89); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+IntentActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com.example.akki.hello_world</span><span class="s0">;</span><span class="s1"> 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span><span class="s1"> 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span><span class="s1"> 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity</span><span class="s0">;</span><span class="s1"> 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span><span class="s1"> 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">public class </span><span class="s1">IntentActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+<a name="l10"><span class="ln">10   </span></a> 
+<a name="l11"><span class="ln">11   </span></a>    Button btn5</span><span class="s0">;</span><span class="s1"> 
+<a name="l12"><span class="ln">12   </span></a>    @Override 
+<a name="l13"><span class="ln">13   </span></a>    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInctance){ 
+<a name="l14"><span class="ln">14   </span></a>        </span><span class="s0">super</span><span class="s1">.onCreate(savedInctance)</span><span class="s0">;</span><span class="s1"> 
+<a name="l15"><span class="ln">15   </span></a>        setContentView(R.layout.splash_screen)</span><span class="s0">;</span><span class="s1"> 
+<a name="l16"><span class="ln">16   </span></a>        btn5=(Button)findViewById(R.id.button5)</span><span class="s0">;</span><span class="s1"> 
+<a name="l17"><span class="ln">17   </span></a>        btn5.setText(getIntent().getExtras().getString(</span><span class="s2">&quot;Value&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+<a name="l18"><span class="ln">18   </span></a>    } 
+<a name="l19"><span class="ln">19   </span></a> 
+<a name="l20"><span class="ln">20   </span></a>    </span><span class="s0">public void </span><span class="s1">swbtnClick(View v) { 
+<a name="l21"><span class="ln">21   </span></a>        Intent i = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this,<a href="MainActivity.java.html">MainActivity</a></span><span class="s1">.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l22"><span class="ln">22   </span></a>        startActivity(i)</span><span class="s0">;</span><span class="s1"> 
+<a name="l23"><span class="ln">23   </span></a>        finish()</span><span class="s0">;</span><span class="s1"> 
+<a name="l24"><span class="ln">24   </span></a>    } 
+<a name="l25"><span class="ln">25   </span></a>} 
+<a name="l26"><span class="ln">26   </span></a></span></pre>
+</body>
+</html>
